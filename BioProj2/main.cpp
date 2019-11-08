@@ -29,30 +29,6 @@ void getMinimumPenalty(string line1, string line2, int mismatchNum, int gap)
         [0][i] = i * gap;
     }
 
-    // calcuting the minimum penalty
-    for (i = 1; i <= m; i++)
-    {
-        for (j = 1; j <= n; j++)
-        {
-            if ( line1[i - 1] ==line2[j - 1])
-            {
-                matrix
-                [i][j] = matrix
-                                         [i - 1][j - 1]+2;
-            }
-            else
-            {
-                matrix
-                [i][j] = max({matrix
-                                              [i - 1][j - 1] + mismatchNum ,
-                                matrix
-                                [i - 1][j] + gap ,
-                                matrix
-                                [i][j - 1] + gap });
-            }
-        }
-    }
-
     // Reconstructing the solution
     int l = max(m,n); // maximum possible length
 
